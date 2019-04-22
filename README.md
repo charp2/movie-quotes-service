@@ -18,9 +18,25 @@ Now you can run `~/movies-and-quotes$ ./updateFunction` anytime code is updated.
 # API
 The base_uri for the API (which invokes this lambda) is https://bhfv7s8zka.execute-api.us-east-1.amazonaws.com/beta/
 
-  Route:                      Request body schema
+  Route
+  -------------------------------------------------------------------
+
 	POST '/movies/find'          { "name": "example", "year": 2003 }
+
+  -------------------------------------------------------------------
+
 	POST '/movies/create'        { "name": "example", "year": 2003 }
+
+    -------------------------------------------------------------------
+
 	POST '/quotes'               { "limit": 3 }
+
+    -------------------------------------------------------------------
+
 	POST '/quotes/find'          { "movie": "example" }
+
+    -------------------------------------------------------------------
+
 	POST '/quotes/create'        { "quote": "example", "movie": "example" }
+
+    -------------------------------------------------------------------
