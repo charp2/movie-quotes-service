@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+rm function.zip || true
+cd v-env/lib/python3.7/site-packages/
+zip -r9 ../../../../function.zip .
+cd ../../../../
+zip -g function.zip function.py
+zip -g function.zip rds_config.py
+zip -g function.zip resources.py
+zip -g function.zip utilities.py
+aws lambda update-function-code --function-name test --zip-file fileb://function.zip
